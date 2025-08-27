@@ -73,8 +73,8 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="hero-image">
-                    <img src="images/hero-mechanical-seal.jpg" alt="Premium Mechanical Seals" id="hero-img">
+                <div class="hero-image" id="homeHeroImageContainer">
+                    <img src="images/Single-Spring-Balanced-Mechanical-Seal.png" alt="Premium Mechanical Seals" id="homeHeroImage">
                     <div class="floating-card">
                         <i class="fas fa-shield-alt"></i>
                         <h4>Quality Certified</h4>
@@ -135,89 +135,258 @@
                 <h2>Our Product Range</h2>
                 <p>Comprehensive selection of mechanical seals and industrial equipment</p>
             </div>
-            <div class="products-grid">
-                <div class="product-card">
+            <!-- Product Categories Navigation -->
+            <div class="product-nav">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="mechanical-seals">Mechanical Seals</button>
+                <button class="category-btn" data-category="pumps">Industrial Pumps</button>
+                <button class="category-btn" data-category="accessories">Accessories</button>
+            </div>
+
+            <div class="products-showcase" id="products-showcase">
+                <!-- Single Spring Seals -->
+                <div class="product-card" data-category="mechanical-seals">
                     <div class="product-image">
-                        <img src="images/single-spring-seal.jpg" alt="Single Spring Seals" id="product-1">
+                        <img src="images/Single-Spring-Balanced-Mechanical-Seal.png" alt="Single Spring Balanced Seal">
                         <div class="product-overlay">
-                            <a href="products.html#single-spring" class="product-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
+                            <span class="product-link" onclick="viewProductDetail('Single Spring Balanced Seal')">
+                                <i class="fas fa-eye"></i>
+                            </span>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Single Spring Seals</h3>
-                        <p>High-performance single spring mechanical seals for various applications</p>
+                        <h3>Single Spring Balanced Seal</h3>
+                        <p>High-performance balanced seal for chemical processing applications</p>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <div class="product-card" data-category="mechanical-seals">
                     <div class="product-image">
-                        <img src="images/multi-spring-seal.jpg" alt="Multi Spring Seals" id="product-2">
+                        <img src="images/Single-Spring-Unbalanced-Seal.png" alt="Single Spring Unbalanced Seal">
                         <div class="product-overlay">
-                            <a href="products.html#multi-spring" class="product-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
+                            <span class="product-link" onclick="viewProductDetail('Single Spring Unbalanced Seal')">
+                                <i class="fas fa-eye"></i>
+                            </span>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Multi Spring Seals</h3>
-                        <p>Durable multi spring seals for heavy-duty industrial operations</p>
+                        <h3>Single Spring Unbalanced Seal</h3>
+                        <p>Cost-effective solution for standard applications</p>
                     </div>
                 </div>
-                <div class="product-card">
+                <!-- Multi Spring Seals -->
+                <div class="product-card" data-category="mechanical-seals">
                     <div class="product-image">
-                        <img src="images/cartridge-seal.jpg" alt="Cartridge Seals" id="product-3">
+                        <img src="images/Multi-Spring-Balanced-Mechanical-Seal.png" alt="Multi Spring Balanced Seal">
                         <div class="product-overlay">
-                            <a href="products.html#cartridge" class="product-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
+                            <span class="product-link" onclick="viewProductDetail('Multi Spring Balanced Seal')">
+                                <i class="fas fa-eye"></i>
+                            </span>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Cartridge Seals</h3>
-                        <p>Easy-to-install cartridge seals for quick maintenance and replacement</p>
+                        <h3>Multi Spring Balanced Seal</h3>
+                        <p>Advanced multi-spring design for demanding applications</p>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <div class="product-card" data-category="mechanical-seals">
                     <div class="product-image">
-                        <img src="images/agitator-seal.jpg" alt="Agitator Seals" id="product-4">
+                        <img src="images/Multi-Spring-Unbalanced-Mechanical-Seal.png" alt="Multi Spring Unbalanced Seal">
                         <div class="product-overlay">
-                            <a href="products.html#agitator" class="product-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
+                            <span class="product-link" onclick="viewProductDetail('Multi Spring Unbalanced Seal')">
+                                <i class="fas fa-eye"></i>
+                            </span>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Agitator Seals</h3>
-                        <p>Specialized seals for mixing and agitating equipment</p>
+                        <h3>Multi Spring Unbalanced Seal</h3>
+                        <p>Reliable performance for industrial applications</p>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <!-- Cartridge Seals -->
+                <div class="product-card" data-category="mechanical-seals">
                     <div class="product-image">
-                        <img src="images/bellow-seal.jpg" alt="Bellow Seals" id="product-5">
+                        <img src="images/Single-Catridge-Seal.png" alt="Single Cartridge Seal">
                         <div class="product-overlay">
-                            <a href="products.html#bellow" class="product-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
+                            <span class="product-link" onclick="viewProductDetail('Single Cartridge Seal')">
+                                <i class="fas fa-eye"></i>
+                            </span>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Bellow Seals</h3>
-                        <p>Flexible bellow seals for applications requiring axial movement</p>
+                        <h3>Single Cartridge Seal</h3>
+                        <p>Pre-assembled unit for easy installation</p>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <div class="product-card" data-category="mechanical-seals">
                     <div class="product-image">
-                        <img src="images/industrial-pumps.jpg" alt="Pumps" id="product-6">
+                        <img src="images/Double-Catridge-Seal.png" alt="Double Cartridge Seal">
                         <div class="product-overlay">
-                            <a href="products.html#pumps" class="product-link">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
+                            <span class="product-link" onclick="viewProductDetail('Double Cartridge Seal')">
+                                <i class="fas fa-eye"></i>
+                            </span>
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Industrial Pumps</h3>
-                        <p>Complete range of centrifugal and positive displacement pumps</p>
+                        <h3>Double Cartridge Seal</h3>
+                        <p>Enhanced safety for hazardous applications</p>
+                    </div>
+                </div>
+
+                <!-- Agitator Seals -->
+                <div class="product-card" data-category="mechanical-seals">
+                    <div class="product-image">
+                        <img src="images/Agitator-Single-Mechanical-Seal.png" alt="Agitator Single Seal">
+                        <div class="product-overlay">
+                            <span class="product-link" onclick="viewProductDetail('Agitator Single Mechanical Seal')">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Agitator Single Mechanical Seal</h3>
+                        <p>Specialized for mixing and agitator applications</p>
+                    </div>
+                </div>
+
+                <!-- Bellow Seals -->
+                <div class="product-card" data-category="mechanical-seals">
+                    <div class="product-image">
+                        <img src="images/Teflon-Bellow-Mechanical-Seal.png" alt="PTFE Teflon Bellow Seal">
+                        <div class="product-overlay">
+                            <span class="product-link" onclick="viewProductDetail('PTFE Teflon Bellow Seal')">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>PTFE Teflon Bellow Seal</h3>
+                        <p>Chemical resistant teflon bellow construction</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="mechanical-seals">
+                    <div class="product-image">
+                        <img src="images/Rubber-Bellow-Mechanical-Seal.png" alt="Rubber Bellow Seal">
+                        <div class="product-overlay">
+                            <span class="product-link" onclick="viewProductDetail('Rubber Bellow Seal')">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Rubber Bellow Seal</h3>
+                        <p>Flexible rubber bellow for general applications</p>
+                    </div>
+                </div>
+
+                <!-- Industrial Pumps -->
+                <div class="product-card" data-category="pumps">
+                    <div class="product-image">
+                        <img src="images/PolyPropylene-Pump-(SPP).png" alt="PolyPropylene Pump">
+                        <div class="product-overlay">
+                            <span class="product-link" onclick="viewProductDetail('PolyPropylene Pump (SPP)')">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>PolyPropylene Pump (SPP)</h3>
+                        <p>Chemical resistant polypropylene construction</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="pumps">
+                    <div class="product-image">
+                        <img src="images/Magnetic-Driven-Pump.png" alt="Magnetic Driven Pump">
+                        <div class="product-overlay">
+                            <span class="product-link" onclick="viewProductDetail('Magnetic Driven Pump')">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Magnetic Driven Pump</h3>
+                        <p>Zero leakage magnetic coupling technology</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="pumps">
+                    <div class="product-image">
+                        <img src="images/Teflon-Pump-(FEP).png" alt="Teflon Pump FEP">
+                        <div class="product-overlay">
+                            <span class="product-link" onclick="viewProductDetail('Teflon Pump (FEP)')">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Teflon Pump (FEP)</h3>
+                        <p>FEP lined for extreme chemical resistance</p>
+                    </div>
+                </div>
+
+                <!-- Accessories -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="images/Lined-Valves.png" alt="Lined Valves">
+                        <div class="product-overlay">
+                            <span class="product-link" onclick="viewProductDetail('Lined Valves')">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Lined Valves</h3>
+                        <p>PTFE/PFA lined for corrosive media control</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="images/Polypropylene-Priming-Pots.png" alt="Priming Pots">
+                        <div class="product-overlay">
+                            <span class="product-link" onclick="viewProductDetail('Polypropylene Priming Pots')">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Polypropylene Priming Pots</h3>
+                        <p>Self-priming system components</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="images/Thermosyphon-Vessel.png" alt="Thermosyphon Vessel">
+                        <div class="product-overlay">
+                            <span class="product-link" onclick="viewProductDetail('Thermosyphon Vessel')">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Thermosyphon Vessel</h3>
+                        <p>Natural circulation heat transfer solution</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="images/Rotary-Joints-Rotary-Unions.png" alt="Rotary Joints">
+                        <div class="product-overlay">
+                            <span class="product-link" onclick="viewProductDetail('Rotary Joints Rotary Unions')">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Rotary Joints & Unions</h3>
+                        <p>Precision rotating fluid transfer connections</p>
                     </div>
                 </div>
             </div>
@@ -341,6 +510,174 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
+    
+    <script>
+        // Product filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const productCards = document.querySelectorAll('.product-card[data-category]');
+
+            // Category filtering
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter products with smooth animation
+                    filterProducts(category);
+                });
+            });
+
+            function filterProducts(category) {
+                productCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    
+                    if (category === 'all' || cardCategory === category) {
+                        card.classList.remove('hidden');
+                        card.classList.add('show');
+                    } else {
+                        card.classList.add('hidden');
+                        card.classList.remove('show');
+                    }
+                });
+            }
+
+            // Initialize with all products shown
+            filterProducts('all');
+        });
+
+        // Navigate to product detail page
+        function viewProductDetail(productName) {
+            window.location.href = `product-detail.html?product=${encodeURIComponent(productName)}`;
+        }
+
+        // Advanced Home Page Hero Image Changer
+        const homeHeroImages = [
+            {
+                src: "images/Single-Spring-Balanced-Mechanical-Seal.png",
+                alt: "Single Spring Balanced Seal"
+            },
+            {
+                src: "images/Multi-Spring-Balanced-Mechanical-Seal.png", 
+                alt: "Multi Spring Balanced Seal"
+            },
+            {
+                src: "images/Single-Catridge-Seal.png",
+                alt: "Single Cartridge Seal"
+            },
+            {
+                src: "images/PolyPropylene-Pump-(SPP).png",
+                alt: "PolyPropylene Pump"
+            },
+            {
+                src: "images/Magnetic-Driven-Pump.png",
+                alt: "Magnetic Driven Pump"
+            },
+            {
+                src: "images/Teflon-Bellow-Mechanical-Seal.png",
+                alt: "PTFE Teflon Bellow Seal"
+            },
+            {
+                src: "images/Lined-Valves.png",
+                alt: "Lined Valves"
+            },
+            {
+                src: "images/Rubber-Bellow-Mechanical-Seal.png",
+                alt: "Rubber Bellow Seal"
+            },
+            {
+                src: "images/Metal-Bellow-Mechanical-Seal.png",
+                alt: "Metal Bellow Seal"
+            },
+            {
+                src: "images/Agitator-Single-Mechanical-Seal.png",
+                alt: "Agitator Single Mechanical Seal"
+            }
+        ];
+
+        let homeCurrentImageIndex = 0;
+        const homeHeroImage = document.getElementById('homeHeroImage');
+        let homeIsChanging = false;
+
+        function changeHomeHeroImageAdvanced() {
+            if (homeHeroImage && !homeIsChanging) {
+                homeIsChanging = true;
+                
+                // Step 1: Add fade out class with advanced effects
+                homeHeroImage.classList.add('fade-out');
+                
+                setTimeout(() => {
+                    // Step 2: Preload next image for smooth transition
+                    const nextIndex = (homeCurrentImageIndex + 1) % homeHeroImages.length;
+                    const nextImage = new Image();
+                    
+                    nextImage.onload = function() {
+                        // Step 3: Change image source
+                        homeHeroImage.src = homeHeroImages[nextIndex].src;
+                        homeHeroImage.alt = homeHeroImages[nextIndex].alt;
+                        homeCurrentImageIndex = nextIndex;
+                        
+                        // Step 4: Remove fade out and add loading animation
+                        homeHeroImage.classList.remove('fade-out');
+                        homeHeroImage.classList.add('loading');
+                        
+                        setTimeout(() => {
+                            // Step 5: Add fade in class and remove loading
+                            homeHeroImage.classList.remove('loading');
+                            homeHeroImage.classList.add('fade-in');
+                            
+                            setTimeout(() => {
+                                // Step 6: Clean up classes and reset state
+                                homeHeroImage.classList.remove('fade-in');
+                                homeIsChanging = false;
+                            }, 100);
+                        }, 100);
+                    };
+                    
+                    nextImage.src = homeHeroImages[nextIndex].src;
+                }, 400); // Wait for fade out to complete
+            }
+        }
+
+        // Enhanced image preloading for smoother transitions
+        function preloadHomeImages() {
+            homeHeroImages.forEach(imageData => {
+                const img = new Image();
+                img.src = imageData.src;
+            });
+        }
+
+        // Start advanced automatic image changing for home page
+        function startHomeAdvancedImageChanger() {
+            if (homeHeroImage) {
+                // Preload all images first
+                preloadHomeImages();
+                
+                // Start changing images every 4.5 seconds for home page
+                setInterval(changeHomeHeroImageAdvanced, 4500);
+                
+                // Add hover pause functionality
+                const homeHeroContainer = document.getElementById('homeHeroImageContainer');
+                
+                if (homeHeroContainer) {
+                    homeHeroContainer.addEventListener('mouseenter', () => {
+                        // Visual feedback on hover
+                        homeHeroContainer.style.transform = 'scale(1.01)';
+                    });
+                    
+                    homeHeroContainer.addEventListener('mouseleave', () => {
+                        homeHeroContainer.style.transform = 'scale(1)';
+                    });
+                }
+            }
+        }
+
+        // Initialize home page advanced image changer when DOM loads
+        document.addEventListener('DOMContentLoaded', startHomeAdvancedImageChanger);
+    </script>
 </body>
 
 </html> 

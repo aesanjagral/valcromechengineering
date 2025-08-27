@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Product Details - Valcrome Engineering</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>VELCROMECH ENGINEERING</h2>
+                <span class="logo-tagline">Premium Industrial Solutions</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link active">Products</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="careers.html" class="nav-link">Careers</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="e-catalogue.html" class="nav-link nav-cta">E-Catalogue</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail-section">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <a href="products.html">Products</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span id="breadcrumbProduct">Product Details</span>
+            </div>
+
+            <!-- Product Detail Content -->
+            <div class="product-detail-content">
+                <div class="product-detail-header">
+                    <div class="product-image-section">
+                        <div class="main-product-image">
+                            <img id="mainProductImage" src="" alt="Product Image">
+                        </div>
+                    </div>
+                    
+                    <div class="product-info-section">
+                        <h1 id="productTitle">Product Name</h1>
+                        <p id="productDescription" class="product-description">
+                            Product description will appear here...
+                        </p>
+                        
+                        <div class="product-actions-section">
+                            <button class="btn btn-primary btn-large" onclick="openQuotePopup()">
+                                <i class="fas fa-quote-left"></i> Get Quote
+                            </button>
+                            <button class="btn btn-secondary btn-large" onclick="callNow()">
+                                <i class="fas fa-phone"></i> Call Now
+                            </button>
+                            <button class="btn btn-outline btn-large" onclick="goBack()">
+                                <i class="fas fa-arrow-left"></i> Back to Products
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Details Tabs -->
+                <div class="product-tabs">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="showTab('specifications')">
+                            <i class="fas fa-cogs"></i> Specifications
+                        </button>
+                        <button class="tab-btn" onclick="showTab('features')">
+                            <i class="fas fa-star"></i> Features
+                        </button>
+                        <button class="tab-btn" onclick="showTab('applications')">
+                            <i class="fas fa-industry"></i> Applications
+                        </button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div id="specifications-tab" class="tab-pane active">
+                            <h3><i class="fas fa-cogs"></i> Technical Specifications</h3>
+                            <div id="productSpecs" class="specs-grid">
+                                <!-- Specifications will be populated here -->
+                            </div>
+                        </div>
+                        
+                        <div id="features-tab" class="tab-pane">
+                            <h3><i class="fas fa-star"></i> Key Features</h3>
+                            <ul id="productFeatures" class="features-list">
+                                <!-- Features will be populated here -->
+                            </ul>
+                        </div>
+                        
+                        <div id="applications-tab" class="tab-pane">
+                            <h3><i class="fas fa-industry"></i> Applications</h3>
+                            <ul id="productApplications" class="applications-list">
+                                <!-- Applications will be populated here -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Products -->
+                <div class="related-products">
+                    <h3><i class="fas fa-boxes"></i> Related Products</h3>
+                    <div id="relatedProductsGrid" class="related-products-grid">
+                        <!-- Related products will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Enquiry Popup -->
+    <div id="quotePopup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>Product Enquiry</h3>
+                <span class="popup-close" onclick="closeQuotePopup()">&times;</span>
+            </div>
+            <form id="quoteForm" class="quote-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <div class="form-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <input type="text" id="customerName" placeholder="Your Name *" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <input type="text" id="customerCity" placeholder="City *" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <div class="form-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <input type="email" id="customerEmail" placeholder="Email Address *" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <input type="tel" id="customerPhone" placeholder="Phone Number *" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <input type="text" id="productName" placeholder="Product" readonly>
+                </div>
+                <div class="form-group">
+                    <div class="form-icon">
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <textarea id="customerRequirements" placeholder="Your Requirements" rows="4"></textarea>
+                </div>
+                <button type="submit" class="quote-submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Enquiry
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>VELCROMECH ENGINEERING</h3>
+                    <p>Since 2010, delivering premium mechanical seals and industrial solutions with unmatched quality and reliability.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html#single-spring">Single Spring Seals</a></li>
+                        <li><a href="products.html#multi-spring">Multi Spring Seals</a></li>
+                        <li><a href="products.html#cartridge">Cartridge Seals</a></li>
+                        <li><a href="products.html#pumps">Industrial Pumps</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +91 88285 74405</p>
+                        <p><i class="fas fa-envelope"></i> info@velcromechengineering.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Industrial Area, India</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 VELCROMECH ENGINEERING. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product database with detailed information
+        const productDatabase = {
+            "Single Spring Balanced Seal": {
+                image: "images/Single-Spring-Balanced-Mechanical-Seal.png",
+                description: "High-performance balanced single spring mechanical seal designed for chemical processing applications. Features excellent chemical resistance and balanced design for reduced wear and extended service life.",
+                specifications: {
+                    "Operating Temperature": "-20°C to +200°C",
+                    "Operating Pressure": "Up to 10 bar",
+                    "Shaft Size": "12mm to 100mm",
+                    "Materials": "Carbon, Silicon Carbide, PTFE",
+                    "Spring Material": "Stainless Steel 316",
+                    "Secondary Seal": "NBR, EPDM, FKM"
+                },
+                features: [
+                    "Balanced design reduces shaft loading",
+                    "Superior chemical resistance",
+                    "Self-aligning face design",
+                    "Extended service life",
+                    "Easy installation and maintenance",
+                    "Wide range of material combinations"
+                ],
+                applications: [
+                    "Chemical Processing",
+                    "Pharmaceutical Industry",
+                    "Water Treatment",
+                    "Food & Beverage",
+                    "Petroleum Refining",
+                    "General Industrial Applications"
+                ]
+            },
+            "Single Spring Unbalanced Seal": {
+                image: "images/Single-Spring-Unbalanced-Seal.png",
+                description: "Reliable unbalanced single spring mechanical seal for general industrial applications. Cost-effective solution with proven performance in various operating conditions.",
+                specifications: {
+                    "Operating Temperature": "-10°C to +180°C",
+                    "Operating Pressure": "Up to 6 bar",
+                    "Shaft Size": "10mm to 80mm",
+                    "Materials": "Carbon, Ceramic, PTFE",
+                    "Spring Material": "Stainless Steel 304",
+                    "Secondary Seal": "NBR, EPDM"
+                },
+                features: [
+                    "Simple and robust design",
+                    "Cost-effective solution",
+                    "Easy replacement",
+                    "Standard material combinations",
+                    "Reliable performance",
+                    "Low maintenance requirements"
+                ],
+                applications: [
+                    "Water Pumps",
+                    "HVAC Systems",
+                    "General Industrial Pumps",
+                    "Agricultural Applications",
+                    "Building Services",
+                    "Light Chemical Applications"
+                ]
+            },
+            "Multi Spring Balanced Seal": {
+                image: "images/Multi-Spring-Balanced-Mechanical-Seal.png",
+                description: "Advanced multi-spring balanced mechanical seal for demanding applications. Multiple springs provide uniform pressure distribution and enhanced reliability in critical services.",
+                specifications: {
+                    "Operating Temperature": "-30°C to +250°C",
+                    "Operating Pressure": "Up to 16 bar",
+                    "Shaft Size": "15mm to 120mm",
+                    "Materials": "Silicon Carbide, Tungsten Carbide",
+                    "Spring Material": "Hastelloy C-276",
+                    "Secondary Seal": "FKM, FFKM"
+                },
+                features: [
+                    "Multiple springs for uniform loading",
+                    "Balanced design for high pressure",
+                    "Superior material combinations",
+                    "Excellent chemical compatibility",
+                    "Extended operating range",
+                    "Reduced vibration sensitivity"
+                ],
+                applications: [
+                    "High Pressure Chemical Processing",
+                    "Aggressive Chemical Handling",
+                    "High Temperature Applications",
+                    "Corrosive Media Pumping",
+                    "API Standard Pumps",
+                    "Critical Process Applications"
+                ]
+            },
+            "Multi Spring Unbalanced Seal": {
+                image: "images/Multi-Spring-Unbalanced-Mechanical-Seal.png",
+                description: "Robust multi-spring unbalanced mechanical seal for general industrial applications. Multiple springs ensure consistent performance even in demanding conditions.",
+                specifications: {
+                    "Operating Temperature": "-20°C to +200°C",
+                    "Operating Pressure": "Up to 10 bar",
+                    "Shaft Size": "12mm to 100mm",
+                    "Materials": "Carbon, Ceramic, Silicon Carbide",
+                    "Spring Material": "Stainless Steel 316",
+                    "Secondary Seal": "NBR, EPDM, FKM"
+                },
+                features: [
+                    "Multiple spring design for reliability",
+                    "Cost-effective solution",
+                    "Wide material selection",
+                    "Easy maintenance",
+                    "Proven performance",
+                    "Standard dimensions"
+                ],
+                applications: [
+                    "Industrial Pumps",
+                    "Chemical Processing",
+                    "Water Treatment",
+                    "HVAC Applications",
+                    "General Industrial Use",
+                    "Process Equipment"
+                ]
+            },
+            "Single Cartridge Seal": {
+                image: "images/Single-Catridge-Seal.png",
+                description: "Complete cartridge mechanical seal assembly for easy installation and maintenance. Pre-assembled unit reduces installation time and ensures proper alignment.",
+                specifications: {
+                    "Operating Temperature": "-40°C to +300°C",
+                    "Operating Pressure": "Up to 20 bar",
+                    "Shaft Size": "20mm to 150mm",
+                    "Materials": "Silicon Carbide, Tungsten Carbide",
+                    "Housing Material": "Stainless Steel 316L",
+                    "Secondary Seal": "FKM, FFKM, PTFE"
+                },
+                features: [
+                    "Pre-assembled cartridge design",
+                    "Easy installation and removal",
+                    "Precise alignment guaranteed",
+                    "High-performance materials",
+                    "Extended service life",
+                    "Reduced maintenance time"
+                ],
+                applications: [
+                    "API 682 Pumps",
+                    "Refinery Applications",
+                    "Petrochemical Plants",
+                    "High-Value Processes",
+                    "Critical Services",
+                    "Hazardous Media Handling"
+                ]
+            },
+            "Double Cartridge Seal": {
+                image: "images/Double-Catridge-Seal.png",
+                description: "Dual cartridge mechanical seal system for enhanced safety and reliability. Features independent primary and secondary seals for critical applications.",
+                specifications: {
+                    "Operating Temperature": "-50°C to +350°C",
+                    "Operating Pressure": "Up to 25 bar",
+                    "Shaft Size": "25mm to 200mm",
+                    "Materials": "Silicon Carbide, Tungsten Carbide",
+                    "Barrier Fluid": "Required",
+                    "Secondary Seal": "FFKM, PTFE"
+                },
+                features: [
+                    "Dual seal configuration",
+                    "Enhanced safety design",
+                    "Barrier fluid compatibility",
+                    "Zero emission capability",
+                    "Advanced monitoring options",
+                    "Compliance with API 682"
+                ],
+                applications: [
+                    "Hazardous Chemical Handling",
+                    "Environmental Protection",
+                    "Zero Emission Requirements",
+                    "Toxic Media Processing",
+                    "High-Value Product Protection",
+                    "Critical Safety Applications"
+                ]
+            },
+            "Agitator Single Mechanical Seal": {
+                image: "images/Agitator-Single-Mechanical-Seal.png",
+                description: "Specialized mechanical seal designed for agitators and mixers. Robust construction handles shaft deflection and vibration common in mixing applications.",
+                specifications: {
+                    "Operating Temperature": "-20°C to +250°C",
+                    "Operating Pressure": "Up to 12 bar",
+                    "Shaft Size": "30mm to 200mm",
+                    "Materials": "Silicon Carbide, Tungsten Carbide",
+                    "Spring Type": "Multiple Wave Springs",
+                    "Secondary Seal": "FKM, EPDM"
+                },
+                features: [
+                    "Vibration resistant design",
+                    "Handles shaft deflection",
+                    "Heavy-duty construction",
+                    "Self-aligning capability",
+                    "Multiple spring configuration",
+                    "Extended wear life"
+                ],
+                applications: [
+                    "Chemical Reactors",
+                    "Mixing Vessels",
+                    "Agitated Tanks",
+                    "Pharmaceutical Mixing",
+                    "Food Processing",
+                    "Paint and Coating Industry"
+                ]
+            },
+            "Agitator Dry Running Seal": {
+                image: "images/Agitator-Dry-Running-Mechanical-Seal.png",
+                description: "Dry running mechanical seal for agitator applications where no liquid lubrication is available. Special materials and design prevent dry running damage.",
+                specifications: {
+                    "Operating Temperature": "-10°C to +200°C",
+                    "Operating Pressure": "Up to 8 bar",
+                    "Shaft Size": "25mm to 150mm",
+                    "Materials": "Carbon Graphite, PTFE",
+                    "Lubrication": "Self-lubricating",
+                    "Secondary Seal": "PTFE, FKM"
+                },
+                features: [
+                    "Dry running capability",
+                    "Self-lubricating materials",
+                    "Low friction design",
+                    "Reduced heat generation",
+                    "Maintenance-free operation",
+                    "Special carbon grades"
+                ],
+                applications: [
+                    "Dry Powder Mixing",
+                    "Vacuum Applications",
+                    "Gas Handling",
+                    "Pharmaceutical Powders",
+                    "Food Grade Materials",
+                    "Chemical Powder Processing"
+                ]
+            },
+            "Rubber Bellow Seal": {
+                image: "images/Rubber-Bellow-Mechanical-Seal.png",
+                description: "Flexible rubber bellow mechanical seal for applications with shaft movement and misalignment. Excellent chemical resistance and flexibility.",
+                specifications: {
+                    "Operating Temperature": "-40°C to +150°C",
+                    "Operating Pressure": "Up to 16 bar",
+                    "Shaft Size": "12mm to 100mm",
+                    "Bellow Material": "NBR, EPDM, FKM",
+                    "Face Materials": "Carbon, Ceramic",
+                    "Secondary Seal": "O-ring"
+                },
+                features: [
+                    "Flexible bellow design",
+                    "Accommodates shaft movement",
+                    "No metal springs",
+                    "Excellent chemical resistance",
+                    "Compact design",
+                    "Easy installation"
+                ],
+                applications: [
+                    "Chemical Pumps",
+                    "Corrosive Media",
+                    "Pharmaceutical Applications",
+                    "Food Grade Processing",
+                    "Water Treatment",
+                    "General Chemical Industry"
+                ]
+            },
+            "PolyPropylene Pump (SPP)": {
+                image: "images/PolyPropylene-Pump-(SPP).png",
+                description: "Corrosion-resistant polypropylene centrifugal pump for handling aggressive chemicals. Ideal for acid handling and chemical transfer applications.",
+                specifications: {
+                    "Flow Rate": "5-500 LPM",
+                    "Head": "Up to 80 meters",
+                    "Suction Size": "25mm to 100mm",
+                    "Delivery Size": "25mm to 80mm",
+                    "Material": "Polypropylene",
+                    "Temperature": "Up to 80°C"
+                },
+                features: [
+                    "100% Polypropylene construction",
+                    "Excellent chemical resistance",
+                    "Corrosion-free operation",
+                    "Lightweight design",
+                    "Easy maintenance",
+                    "Cost-effective solution"
+                ],
+                applications: [
+                    "Acid Handling",
+                    "Chemical Transfer",
+                    "Water Treatment",
+                    "Electroplating",
+                    "Waste Water Treatment",
+                    "Laboratory Applications"
+                ]
+            },
+            "Magnetic Driven Pump": {
+                image: "images/Magnetic-Driven-Pump.png",
+                description: "Seal-less magnetic drive pump for zero leakage applications. Magnetic coupling eliminates the need for mechanical seals.",
+                specifications: {
+                    "Flow Rate": "10-1000 LPM",
+                    "Head": "Up to 100 meters",
+                    "Temperature": "Up to 200°C",
+                    "Pressure": "Up to 16 bar",
+                    "Materials": "SS316, Hastelloy",
+                    "Coupling": "Rare Earth Magnets"
+                },
+                features: [
+                    "Zero leakage design",
+                    "No mechanical seals",
+                    "Magnetic coupling technology",
+                    "Maintenance-free operation",
+                    "Environmental safety",
+                    "Energy efficient"
+                ],
+                applications: [
+                    "Hazardous Chemicals",
+                    "Pharmaceutical Industry",
+                    "Semiconductor Manufacturing",
+                    "Nuclear Applications",
+                    "Food & Beverage",
+                    "High Purity Applications"
+                ]
+            },
+            "Lined Valves": {
+                image: "images/Lined-Valves.png",
+                description: "PTFE/PFA lined valves for handling highly corrosive chemicals. Complete chemical resistance with metallic strength.",
+                specifications: {
+                    "Size Range": "15mm to 300mm",
+                    "Pressure Rating": "PN10 to PN40",
+                    "Temperature": "Up to 200°C",
+                    "Lining Material": "PTFE, PFA, FEP",
+                    "Body Material": "Cast Iron, Carbon Steel",
+                    "End Connections": "Flanged, Wafer"
+                },
+                features: [
+                    "Complete chemical resistance",
+                    "PTFE/PFA lined construction",
+                    "Full bore design",
+                    "Bubble tight shutoff",
+                    "Fire safe design",
+                    "Long service life"
+                ],
+                applications: [
+                    "Chemical Processing",
+                    "Pharmaceutical Industry",
+                    "Pulp & Paper",
+                    "Textile Industry",
+                    "Water Treatment",
+                    "Aggressive Media Handling"
+                ]
+            },
+            "Conical Spring Unbalanced Seal": {
+                image: "images/Conical-Spring-Unbalanced-Mechanical-Seal.png",
+                description: "Innovative conical spring design for enhanced sealing performance in standard applications. Unique spring geometry provides optimal loading distribution.",
+                specifications: {
+                    "Operating Temperature": "-15°C to +180°C",
+                    "Operating Pressure": "Up to 8 bar",
+                    "Shaft Size": "12mm to 80mm",
+                    "Materials": "Carbon, Ceramic, PTFE",
+                    "Spring Type": "Conical Wave Spring",
+                    "Secondary Seal": "NBR, EPDM"
+                },
+                features: [
+                    "Unique conical spring design",
+                    "Optimal force distribution",
+                    "Cost-effective solution",
+                    "Easy installation",
+                    "Standard dimensions",
+                    "Reliable performance"
+                ],
+                applications: [
+                    "Water Pumps",
+                    "HVAC Systems",
+                    "General Industrial Applications",
+                    "Building Services",
+                    "Light Chemical Processing",
+                    "Agricultural Equipment"
+                ]
+            },
+            "Single Wave Spring Seal": {
+                image: "images/Single-Wave-Spring-Mechanical-Seal.png",
+                description: "Advanced wave spring technology providing consistent sealing force across all operating conditions. Innovative spring design ensures uniform pressure distribution.",
+                specifications: {
+                    "Operating Temperature": "-25°C to +200°C",
+                    "Operating Pressure": "Up to 12 bar",
+                    "Shaft Size": "15mm to 100mm",
+                    "Materials": "Carbon, Silicon Carbide",
+                    "Spring Type": "Wave Spring Technology",
+                    "Secondary Seal": "NBR, FKM"
+                },
+                features: [
+                    "Wave spring technology",
+                    "Consistent sealing force",
+                    "Compact design",
+                    "Low spring rate",
+                    "Self-aligning capability",
+                    "Extended service life"
+                ],
+                applications: [
+                    "Chemical Processing",
+                    "Pharmaceutical Industry",
+                    "Food & Beverage",
+                    "Water Treatment",
+                    "General Industrial",
+                    "Process Equipment"
+                ]
+            },
+            "Multi Spring Reverse Balanced Seal": {
+                image: "images/Multi-Spring-Reverse-Balanced-Mechanical-Seal.png",
+                description: "Special reverse balanced design for unique applications requiring reverse pressure handling. Advanced engineering for specialized conditions.",
+                specifications: {
+                    "Operating Temperature": "-30°C to +220°C",
+                    "Operating Pressure": "Up to 14 bar",
+                    "Shaft Size": "20mm to 120mm",
+                    "Materials": "Silicon Carbide, Tungsten Carbide",
+                    "Spring Configuration": "Multiple Reverse Loading",
+                    "Secondary Seal": "FKM, EPDM"
+                },
+                features: [
+                    "Reverse balanced design",
+                    "Specialized pressure handling",
+                    "Multiple spring configuration",
+                    "Advanced engineering",
+                    "Custom applications",
+                    "Enhanced reliability"
+                ],
+                applications: [
+                    "Specialized Chemical Processing",
+                    "Reverse Pressure Applications",
+                    "Unique Industrial Processes",
+                    "Custom Equipment",
+                    "Special Purpose Pumps",
+                    "Research Applications"
+                ]
+            },
+            "Capsulated Multi Spring Balanced Seal": {
+                image: "images/Capsulated-Multi-Spring-Balanced-Mechanical-Seal.png",
+                description: "Capsulated design protects springs from aggressive media and contamination. Enhanced protection for harsh operating environments.",
+                specifications: {
+                    "Operating Temperature": "-40°C to +250°C",
+                    "Operating Pressure": "Up to 18 bar",
+                    "Shaft Size": "18mm to 150mm",
+                    "Materials": "Silicon Carbide, Tungsten Carbide",
+                    "Protection": "Fully Capsulated Springs",
+                    "Secondary Seal": "FKM, FFKM"
+                },
+                features: [
+                    "Capsulated spring protection",
+                    "Contamination resistance",
+                    "Aggressive media compatibility",
+                    "Extended spring life",
+                    "Balanced design benefits",
+                    "Superior reliability"
+                ],
+                applications: [
+                    "Aggressive Chemical Handling",
+                    "Contaminated Media",
+                    "Harsh Environments",
+                    "Corrosive Applications",
+                    "High-Value Processes",
+                    "Critical Operations"
+                ]
+            },
+            "Multi Spring Double Mechanical Seal": {
+                image: "images/Multi-Spring-Double-Mechanical-Seal.png",
+                description: "Double seal design providing extra protection for critical applications and hazardous fluids. Enhanced safety and reliability.",
+                specifications: {
+                    "Operating Temperature": "-50°C to +300°C",
+                    "Operating Pressure": "Up to 25 bar",
+                    "Shaft Size": "25mm to 200mm",
+                    "Materials": "Silicon Carbide, Tungsten Carbide",
+                    "Configuration": "Double Tandem/Back-to-Back",
+                    "Barrier System": "Required"
+                },
+                features: [
+                    "Double seal protection",
+                    "Enhanced safety design",
+                    "Multiple spring reliability",
+                    "Barrier fluid compatible",
+                    "Zero emission capability",
+                    "Critical application ready"
+                ],
+                applications: [
+                    "Hazardous Chemical Processing",
+                    "Toxic Media Handling",
+                    "Environmental Protection",
+                    "High-Value Product Protection",
+                    "Safety Critical Applications",
+                    "Zero Emission Requirements"
+                ]
+            },
+            "Multi Spring Dura Type Seal": {
+                image: "images/Multi-Spring-Dura-Type-Mechanical-Seal.png",
+                description: "Enhanced durability design for extended service life in continuous operation applications. Built for maximum longevity.",
+                specifications: {
+                    "Operating Temperature": "-30°C to +280°C",
+                    "Operating Pressure": "Up to 20 bar",
+                    "Shaft Size": "20mm to 150mm",
+                    "Materials": "Premium Silicon Carbide",
+                    "Spring Material": "Super Alloy",
+                    "Design Life": "Extended Durability"
+                },
+                features: [
+                    "Extended durability design",
+                    "Premium material construction",
+                    "Continuous operation capability",
+                    "Enhanced wear resistance",
+                    "Long service intervals",
+                    "Reduced maintenance costs"
+                ],
+                applications: [
+                    "Continuous Process Industries",
+                    "24/7 Operations",
+                    "Remote Locations",
+                    "Critical Process Equipment",
+                    "High Availability Requirements",
+                    "Extended Service Applications"
+                ]
+            },
+            "High Pressure Cartridge Seal": {
+                image: "images/High-Pressure-Catridge-Seal.png",
+                description: "Specially designed cartridge seal for extreme high-pressure applications and critical operations. Built to handle the most demanding conditions.",
+                specifications: {
+                    "Operating Temperature": "-40°C to +350°C",
+                    "Operating Pressure": "Up to 40 bar",
+                    "Shaft Size": "30mm to 200mm",
+                    "Materials": "Tungsten Carbide, Diamond-like Carbon",
+                    "Housing": "High-Strength Alloy",
+                    "Pressure Rating": "Extreme High Pressure"
+                },
+                features: [
+                    "Extreme pressure capability",
+                    "Cartridge convenience",
+                    "High-strength materials",
+                    "Critical application design",
+                    "Easy installation",
+                    "Superior reliability"
+                ],
+                applications: [
+                    "High-Pressure Processing",
+                    "Hydraulic Applications",
+                    "Extreme Pressure Pumps",
+                    "Critical Operations",
+                    "Industrial Hydraulics",
+                    "Specialized Equipment"
+                ]
+            },
+            "Metal Bellow Cartridge Seal": {
+                image: "images/Metal-Bellow-Catridge-Seal.png",
+                description: "Advanced metal bellow cartridge seal providing exceptional flexibility and temperature resistance. Superior performance in demanding conditions.",
+                specifications: {
+                    "Operating Temperature": "-80°C to +400°C",
+                    "Operating Pressure": "Up to 30 bar",
+                    "Shaft Size": "25mm to 180mm",
+                    "Bellow Material": "Inconel, Hastelloy",
+                    "Face Materials": "Tungsten Carbide",
+                    "Design": "Welded Metal Bellows"
+                },
+                features: [
+                    "Metal bellow flexibility",
+                    "Extreme temperature capability",
+                    "Cartridge installation",
+                    "Superior chemical resistance",
+                    "No elastomeric components",
+                    "High reliability"
+                ],
+                applications: [
+                    "High Temperature Applications",
+                    "Extreme Chemical Processing",
+                    "Aerospace Applications",
+                    "Nuclear Industry",
+                    "Specialized Chemical Plants",
+                    "Research Facilities"
+                ]
+            },
+            "PTFE Teflon Bellow Seal": {
+                image: "images/Teflon-Bellow-Mechanical-Seal.png",
+                description: "Chemical resistant PTFE teflon bellow seal ideal for corrosive media applications in chemical processing. Superior chemical compatibility.",
+                specifications: {
+                    "Operating Temperature": "-40°C to +200°C",
+                    "Operating Pressure": "Up to 16 bar",
+                    "Shaft Size": "15mm to 100mm",
+                    "Bellow Material": "PTFE/Teflon",
+                    "Face Materials": "Carbon, PTFE",
+                    "Chemical Resistance": "Excellent"
+                },
+                features: [
+                    "PTFE/Teflon construction",
+                    "Outstanding chemical resistance",
+                    "Flexible bellow design",
+                    "No metal springs",
+                    "Corrosion-free operation",
+                    "Easy maintenance"
+                ],
+                applications: [
+                    "Aggressive Chemical Processing",
+                    "Corrosive Media Handling",
+                    "Pharmaceutical Applications",
+                    "Food Grade Processing",
+                    "Acid/Base Applications",
+                    "Chemical Transfer Systems"
+                ]
+            },
+            "PTFE Bellow With Replaceable Face": {
+                image: "images/Teflon-Bellow-With-Replaceable-Face.png",
+                description: "Advanced PTFE bellow seal with replaceable face design for easy maintenance and extended service life. Cost-effective maintenance solution.",
+                specifications: {
+                    "Operating Temperature": "-35°C to +180°C",
+                    "Operating Pressure": "Up to 12 bar",
+                    "Shaft Size": "12mm to 80mm",
+                    "Bellow Material": "PTFE",
+                    "Face Design": "Replaceable",
+                    "Maintenance": "Easy Face Replacement"
+                },
+                features: [
+                    "Replaceable face design",
+                    "Easy maintenance",
+                    "PTFE chemical resistance",
+                    "Cost-effective operation",
+                    "Extended service life",
+                    "Reduced downtime"
+                ],
+                applications: [
+                    "Chemical Processing",
+                    "Pharmaceutical Industry",
+                    "Food & Beverage",
+                    "Water Treatment",
+                    "Laboratory Applications",
+                    "Process Equipment"
+                ]
+            },
+            "Metal Bellow Seal": {
+                image: "images/Metal-Bellow-Mechanical-Seal.png",
+                description: "Metal bellow design provides excellent flexibility and high temperature resistance for demanding industrial applications.",
+                specifications: {
+                    "Operating Temperature": "-100°C to +450°C",
+                    "Operating Pressure": "Up to 25 bar",
+                    "Shaft Size": "20mm to 150mm",
+                    "Bellow Material": "Stainless Steel 316L",
+                    "Face Materials": "Tungsten Carbide",
+                    "Design": "Welded Construction"
+                },
+                features: [
+                    "Metal bellow construction",
+                    "Extreme temperature capability",
+                    "High pressure resistance",
+                    "No elastomeric components",
+                    "Superior flexibility",
+                    "Long service life"
+                ],
+                applications: [
+                    "High Temperature Processing",
+                    "Steam Applications",
+                    "Thermal Oil Systems",
+                    "Chemical Processing",
+                    "Power Generation",
+                    "Industrial Heating"
+                ]
+            },
+            "Monoblock Pump (SPM)": {
+                image: "images/Monoblock-Pump-(SPM).png",
+                description: "Compact monoblock design centrifugal pump for general industrial and commercial applications. Space-efficient and reliable.",
+                specifications: {
+                    "Flow Rate": "10-1000 LPM",
+                    "Head": "Up to 120 meters",
+                    "Suction Size": "25mm to 150mm",
+                    "Delivery Size": "25mm to 100mm",
+                    "Material": "Cast Iron, Stainless Steel",
+                    "Motor": "Directly Coupled"
+                },
+                features: [
+                    "Monoblock design",
+                    "Space-efficient installation",
+                    "Direct motor coupling",
+                    "Easy maintenance",
+                    "Reliable operation",
+                    "Cost-effective solution"
+                ],
+                applications: [
+                    "Water Supply Systems",
+                    "HVAC Applications",
+                    "Industrial Water Transfer",
+                    "Irrigation Systems",
+                    "Building Services",
+                    "General Purpose Pumping"
+                ]
+            },
+            "Back Pull Out Design Pump (SBD)": {
+                image: "images/Back-Pull-Out-Design-Pump-(SBD).png",
+                description: "Back pull-out design allows easy maintenance without disturbing piping connections. Maintenance-friendly industrial pump design.",
+                specifications: {
+                    "Flow Rate": "50-2000 LPM",
+                    "Head": "Up to 150 meters",
+                    "Suction Size": "50mm to 200mm",
+                    "Delivery Size": "32mm to 150mm",
+                    "Material": "Cast Iron, SS316",
+                    "Design": "Back Pull-Out"
+                },
+                features: [
+                    "Back pull-out design",
+                    "Easy maintenance access",
+                    "No piping disturbance",
+                    "Robust construction",
+                    "Maintenance-friendly",
+                    "Industrial grade build"
+                ],
+                applications: [
+                    "Chemical Processing",
+                    "Industrial Water Systems",
+                    "Process Industries",
+                    "Manufacturing Plants",
+                    "Water Treatment",
+                    "General Industrial"
+                ]
+            },
+            "Back Pull Out Metallic Pump (SBM)": {
+                image: "images/(SBM)-Back-Pull-Out-Metallic-Pump.png",
+                description: "Metallic construction back pull-out pump for demanding industrial applications. Superior durability and chemical resistance.",
+                specifications: {
+                    "Flow Rate": "100-3000 LPM",
+                    "Head": "Up to 200 meters",
+                    "Suction Size": "65mm to 250mm",
+                    "Delivery Size": "50mm to 200mm",
+                    "Material": "Stainless Steel 316",
+                    "Construction": "All Metallic"
+                },
+                features: [
+                    "All metallic construction",
+                    "Superior chemical resistance",
+                    "Back pull-out design",
+                    "Heavy-duty operation",
+                    "Corrosion resistance",
+                    "Industrial reliability"
+                ],
+                applications: [
+                    "Chemical Industries",
+                    "Pharmaceutical Processing",
+                    "Corrosive Media Handling",
+                    "High-Value Applications",
+                    "Process Industries",
+                    "Critical Operations"
+                ]
+            },
+            "Closed Impeller Metallic Pump (SCM)": {
+                image: "images/(SCM)-Closed-Impeller-Metallic-Pump.png",
+                description: "Closed impeller metallic pump design for high efficiency and superior performance in demanding applications.",
+                specifications: {
+                    "Flow Rate": "150-5000 LPM",
+                    "Head": "Up to 250 meters",
+                    "Suction Size": "80mm to 300mm",
+                    "Delivery Size": "65mm to 250mm",
+                    "Impeller": "Closed Design",
+                    "Material": "Stainless Steel 316L"
+                },
+                features: [
+                    "Closed impeller design",
+                    "High efficiency operation",
+                    "Metallic construction",
+                    "Superior performance",
+                    "Reliable operation",
+                    "Low maintenance"
+                ],
+                applications: [
+                    "High Head Applications",
+                    "Clear Liquid Pumping",
+                    "Chemical Processing",
+                    "Water Treatment",
+                    "Industrial Applications",
+                    "Process Equipment"
+                ]
+            },
+            "Teflon Pump (FEP)": {
+                image: "images/Teflon-Pump-(FEP).png",
+                description: "FEP lined pump for handling highly corrosive chemicals. Complete chemical resistance with fluoropolymer lining.",
+                specifications: {
+                    "Flow Rate": "20-800 LPM",
+                    "Head": "Up to 80 meters",
+                    "Suction Size": "25mm to 100mm",
+                    "Delivery Size": "25mm to 80mm",
+                    "Lining": "FEP (Fluorinated Ethylene Propylene)",
+                    "Temperature": "Up to 150°C"
+                },
+                features: [
+                    "FEP fluoropolymer lining",
+                    "Complete chemical resistance",
+                    "Non-stick surface",
+                    "Easy cleaning",
+                    "Corrosion-free operation",
+                    "Low friction losses"
+                ],
+                applications: [
+                    "Ultra-Pure Chemical Handling",
+                    "Semiconductor Industry",
+                    "Pharmaceutical Processing",
+                    "Laboratory Applications",
+                    "High-Purity Systems",
+                    "Aggressive Chemical Transfer"
+                ]
+            },
+            "Teflon Pump (PFA)": {
+                image: "images/Teflon-Pump-(PFA).png",
+                description: "PFA lined pump for extreme chemical resistance and high-temperature applications. Premium fluoropolymer solution.",
+                specifications: {
+                    "Flow Rate": "25-1000 LPM",
+                    "Head": "Up to 100 meters",
+                    "Suction Size": "32mm to 125mm",
+                    "Delivery Size": "25mm to 100mm",
+                    "Lining": "PFA (Perfluoroalkoxy)",
+                    "Temperature": "Up to 200°C"
+                },
+                features: [
+                    "PFA fluoropolymer lining",
+                    "Extreme chemical resistance",
+                    "High-temperature capability",
+                    "Superior purity",
+                    "Non-contaminating",
+                    "Long service life"
+                ],
+                applications: [
+                    "High-Temperature Chemical Processing",
+                    "Semiconductor Manufacturing",
+                    "Pharmaceutical Industry",
+                    "Ultra-Pure Applications",
+                    "Aggressive Media Handling",
+                    "High-Value Processes"
+                ]
+            },
+            "Teflon Pump (PVDF)": {
+                image: "images/Teflon-Pump-(PVDF).png",
+                description: "PVDF pump for excellent chemical resistance and mechanical strength. Ideal for aggressive chemical applications.",
+                specifications: {
+                    "Flow Rate": "30-1200 LPM",
+                    "Head": "Up to 120 meters",
+                    "Suction Size": "40mm to 150mm",
+                    "Delivery Size": "32mm to 125mm",
+                    "Material": "PVDF (Polyvinylidene Fluoride)",
+                    "Temperature": "Up to 140°C"
+                },
+                features: [
+                    "PVDF construction",
+                    "Excellent chemical resistance",
+                    "High mechanical strength",
+                    "UV resistance",
+                    "Easy installation",
+                    "Low maintenance"
+                ],
+                applications: [
+                    "Chemical Processing",
+                    "Water Treatment",
+                    "Pharmaceutical Industry",
+                    "Food & Beverage",
+                    "Electroplating",
+                    "Industrial Applications"
+                ]
+            },
+            "Polypropylene Priming Pots": {
+                image: "images/Polypropylene-Priming-Pots.png",
+                description: "Polypropylene priming pots for self-priming pump systems. Chemical resistant and maintenance-free operation.",
+                specifications: {
+                    "Capacity": "5-200 Liters",
+                    "Material": "Polypropylene",
+                    "Temperature": "Up to 80°C",
+                    "Pressure Rating": "Up to 6 bar",
+                    "Connections": "Threaded/Flanged",
+                    "Design": "Atmospheric Tank"
+                },
+                features: [
+                    "Polypropylene construction",
+                    "Chemical resistance",
+                    "Self-priming capability",
+                    "Maintenance-free",
+                    "Lightweight design",
+                    "Easy installation"
+                ],
+                applications: [
+                    "Self-Priming Pump Systems",
+                    "Chemical Transfer",
+                    "Water Treatment",
+                    "Industrial Applications",
+                    "Process Equipment",
+                    "Pump Priming Systems"
+                ]
+            },
+            "Thermosyphon Vessel": {
+                image: "images/Thermosyphon-Vessel.png",
+                description: "Thermosyphon vessel for natural circulation and heat transfer applications. Passive heat transfer solution.",
+                specifications: {
+                    "Capacity": "50-5000 Liters",
+                    "Material": "Stainless Steel, Carbon Steel",
+                    "Temperature": "Up to 300°C",
+                    "Pressure Rating": "Up to 16 bar",
+                    "Design": "Natural Circulation",
+                    "Heat Transfer": "Thermosyphon Effect"
+                },
+                features: [
+                    "Natural circulation design",
+                    "No moving parts",
+                    "Energy-efficient operation",
+                    "Reliable heat transfer",
+                    "Low maintenance",
+                    "Passive operation"
+                ],
+                applications: [
+                    "Heat Recovery Systems",
+                    "Solar Water Heating",
+                    "Process Heat Transfer",
+                    "Thermal Energy Storage",
+                    "Industrial Heating",
+                    "Energy Conservation"
+                ]
+            },
+            "Rotary Joints Rotary Unions": {
+                image: "images/Rotary-Joints-Rotary-Unions.png",
+                description: "Rotary joints and unions for transferring fluids through rotating connections. Precision engineered for continuous rotation.",
+                specifications: {
+                    "Size Range": "12mm to 200mm",
+                    "Pressure Rating": "Up to 50 bar",
+                    "Temperature": "Up to 400°C",
+                    "Speed": "Up to 10000 RPM",
+                    "Seal Type": "Mechanical/Carbon",
+                    "Materials": "Stainless Steel, Alloy Steel"
+                },
+                features: [
+                    "Continuous rotation capability",
+                    "Precision engineering",
+                    "Multiple passage options",
+                    "High-speed operation",
+                    "Leak-proof design",
+                    "Long service life"
+                ],
+                applications: [
+                    "Rotating Machinery",
+                    "Paper & Pulp Industry",
+                    "Textile Machinery",
+                    "Rubber & Plastic Processing",
+                    "Steel Industry",
+                    "Machine Tools"
+                ]
+            }
+        };
+
+        // Get product name from URL parameter
+        function getProductFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('product') || 'Single Spring Balanced Seal';
+        }
+
+        // Load product details
+        function loadProductDetails() {
+            const productName = getProductFromURL();
+            const productInfo = productDatabase[productName];
+
+            if (productInfo) {
+                // Update page title
+                document.getElementById('pageTitle').textContent = `${productName} - Valcrome Engineering`;
+                document.getElementById('breadcrumbProduct').textContent = productName;
+                
+                // Update product information
+                document.getElementById('productTitle').textContent = productName;
+                document.getElementById('mainProductImage').src = productInfo.image;
+                document.getElementById('mainProductImage').alt = productName;
+                document.getElementById('productDescription').textContent = productInfo.description;
+
+                // Populate specifications
+                const specsContainer = document.getElementById('productSpecs');
+                specsContainer.innerHTML = '';
+                for (const [key, value] of Object.entries(productInfo.specifications)) {
+                    specsContainer.innerHTML += `
+                        <div class="spec-item">
+                            <span class="spec-label">${key}:</span>
+                            <span class="spec-value">${value}</span>
+                        </div>
+                    `;
+                }
+
+                // Populate features
+                const featuresContainer = document.getElementById('productFeatures');
+                featuresContainer.innerHTML = '';
+                productInfo.features.forEach(feature => {
+                    featuresContainer.innerHTML += `<li><i class="fas fa-check"></i> ${feature}</li>`;
+                });
+
+                // Populate applications
+                const applicationsContainer = document.getElementById('productApplications');
+                applicationsContainer.innerHTML = '';
+                productInfo.applications.forEach(application => {
+                    applicationsContainer.innerHTML += `<li><i class="fas fa-industry"></i> ${application}</li>`;
+                });
+
+                // Store current product for quote popup
+                window.currentProduct = productName;
+                
+                // Load related products
+                loadRelatedProducts(productName);
+            } else {
+                // Redirect to products page if product not found
+                window.location.href = 'products.html';
+            }
+        }
+
+        // Load related products
+        function loadRelatedProducts(currentProduct) {
+            const relatedContainer = document.getElementById('relatedProductsGrid');
+            relatedContainer.innerHTML = '';
+            
+            let count = 0;
+            for (const [productName, productInfo] of Object.entries(productDatabase)) {
+                if (productName !== currentProduct && count < 3) {
+                    relatedContainer.innerHTML += `
+                        <div class="related-product-card" onclick="viewProduct('${productName}')">
+                            <img src="${productInfo.image}" alt="${productName}">
+                            <h4>${productName}</h4>
+                            <p>${productInfo.description.substring(0, 100)}...</p>
+                        </div>
+                    `;
+                    count++;
+                }
+            }
+        }
+
+        // Tab functionality
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-pane').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // View product function
+        function viewProduct(productName) {
+            window.location.href = `product-detail.html?product=${encodeURIComponent(productName)}`;
+        }
+
+        // Go back function - Navigate to exact product position
+        function goBack() {
+            const currentProductName = getProductFromURL();
+            // Store the product name to scroll to it on products page
+            sessionStorage.setItem('scrollToProduct', currentProductName);
+            window.location.href = 'products.html';
+        }
+
+        // Quote popup functions
+        function openQuotePopup() {
+            document.getElementById('productName').value = window.currentProduct || '';
+            document.getElementById('quotePopup').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeQuotePopup() {
+            document.getElementById('quotePopup').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Call now function
+        function callNow() {
+            window.location.href = 'tel:+918828574405';
+        }
+
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('customerName').value,
+                city: document.getElementById('customerCity').value,
+                email: document.getElementById('customerEmail').value,
+                phone: document.getElementById('customerPhone').value,
+                product: document.getElementById('productName').value,
+                requirements: document.getElementById('customerRequirements').value
+            };
+            
+            alert('Thank you for your enquiry! We will contact you soon.');
+            closeQuotePopup();
+            this.reset();
+        });
+
+        // Close popup when clicking outside
+        document.getElementById('quotePopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeQuotePopup();
+            }
+        });
+
+        // Load product details when page loads
+        document.addEventListener('DOMContentLoaded', loadProductDetails);
+    </script>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

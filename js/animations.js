@@ -235,8 +235,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                 document.querySelector('.admin-panel');
 
         if (!shouldShowUpload) {
-            // Create a floating button to access image management
-            createImageManagementButton();
+            // Create WhatsApp floating button for customer support
+            createWhatsAppButton();
             return;
         }
 
@@ -299,17 +299,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function createImageManagementButton() {
-        const managementBtn = document.createElement('button');
-        managementBtn.className = 'image-management-btn';
-        managementBtn.innerHTML = '<i class="fas fa-images"></i>';
-        managementBtn.setAttribute('title', 'Manage Images');
+    function createWhatsAppButton() {
+        const whatsappBtn = document.createElement('a');
+        whatsappBtn.className = 'whatsapp-float';
+        whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
+        whatsappBtn.setAttribute('title', 'Chat on WhatsApp');
+        whatsappBtn.href = 'https://wa.me/918828574405?text=Hello! I am interested in your mechanical seals and pumps. Please share more details.';
+        whatsappBtn.target = '_blank';
+        whatsappBtn.rel = 'noopener noreferrer';
         
-        managementBtn.addEventListener('click', () => {
-            window.open('?manage=images', '_blank');
-        });
-        
-        document.body.appendChild(managementBtn);
+        document.body.appendChild(whatsappBtn);
     }
 
     // Global functions for image management
